@@ -4,15 +4,17 @@ apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 apply plugin: 'kotlin-parcelize'
 
+
+
 android {
     compileSdkVersion 31
     buildToolsVersion = '29.0.3'
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 31
 
-        renderscriptTargetApi 29//must match target sdk and build tools
+        renderscriptTargetApi 31//must match target sdk and build tools
         vectorDrawables.useSupportLibrary = true
 
         applicationId "code.name.monkey.retromusic"
@@ -161,6 +163,9 @@ dependencies {
     implementation 'com.github.dhaval2404:imagepicker:1.7.1'
     implementation 'me.zhanghai.android.fastscroll:library:1.1.7'
     debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+
+    implementation 'com.diogobernardino:williamchart:2.2'
+    implementation 'com.h6ah4i.android.widget.verticalseekbar:verticalseekbar:0.7.0'
 }
 
 apply from: '../spotless.gradle'

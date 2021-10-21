@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -37,6 +38,7 @@ import code.name.monkey.retromusic.activities.SupportDevelopmentActivity;
 import code.name.monkey.retromusic.activities.UserInfoActivity;
 import code.name.monkey.retromusic.activities.WhatsNewActivity;
 import code.name.monkey.retromusic.activities.bugreport.BugReportActivity;
+import code.name.monkey.retromusic.equalizer.DialogEqualizerFragment;
 import code.name.monkey.retromusic.helper.MusicPlayerRemote;
 
 public class NavigationUtil {
@@ -93,18 +95,33 @@ public class NavigationUtil {
               activity, activity.getResources().getString(R.string.no_audio_ID), Toast.LENGTH_LONG)
           .show();
     } else {
-      try {
-        final Intent effects = new Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL);
-        effects.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, sessionId);
-        effects.putExtra(AudioEffect.EXTRA_CONTENT_TYPE, AudioEffect.CONTENT_TYPE_MUSIC);
-        activity.startActivityForResult(effects, 0);
-      } catch (@NonNull final ActivityNotFoundException notFound) {
-        Toast.makeText(
-                activity,
-                activity.getResources().getString(R.string.no_equalizer),
-                Toast.LENGTH_SHORT)
-            .show();
-      }
+
+
+//      try {
+//        final Intent effects = new Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL);
+//        effects.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, sessionId);
+//        effects.putExtra(AudioEffect.EXTRA_CONTENT_TYPE, AudioEffect.CONTENT_TYPE_MUSIC);
+//        activity.startActivityForResult(effects, 0);
+//      } catch (@NonNull final ActivityNotFoundException notFound) {
+//        Toast.makeText(
+//                activity,
+//                activity.getResources().getString(R.string.no_equalizer),
+//                Toast.LENGTH_SHORT)
+//            .show();
+//      }
+
+
+      DialogEqualizerFragment fragment = DialogEqualizerFragment.newBuilder()
+              .setAudioSessionId(sessionId)
+              .themeColor(ContextCompat.getColor(activity, R.color.green))
+              .textColor(ContextCompat.getColor(activity, R.color.black_color))
+              .accentAlpha(ContextCompat.getColor(activity, R.color.default_blue_light))
+              .darkColor(ContextCompat.getColor(activity, R.color.green))
+              .setAccentColor(ContextCompat.getColor(activity, R.color.md_white_1000))
+              .build();
+      fragment.show(activity.getFragmentManager(), "eq");
+
+
     }
   }
 }
