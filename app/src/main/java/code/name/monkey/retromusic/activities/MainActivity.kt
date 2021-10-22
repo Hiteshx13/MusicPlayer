@@ -14,6 +14,7 @@
  */
 package code.name.monkey.retromusic.activities
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener
@@ -45,6 +46,10 @@ class MainActivity : AbsCastActivity(), OnSharedPreferenceChangeListener {
     companion object {
         const val TAG = "MainActivity"
         const val EXPAND_PANEL = "expand_panel"
+        fun getIntent(context: Context): Intent {
+            var intent = Intent(context, MainActivity::class.java)
+            return intent
+        }
     }
 
     override fun createContentView(): SlidingMusicPanelLayoutBinding {

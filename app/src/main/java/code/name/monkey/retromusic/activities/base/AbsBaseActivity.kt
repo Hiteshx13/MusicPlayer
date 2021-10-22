@@ -178,4 +178,8 @@ abstract class AbsBaseActivity : AbsThemeActivity() {
         }
         return super.dispatchTouchEvent(event)
     }
+
+    open fun launchActivity(intent: Intent) {
+        startActivity(intent)
+    }
 }
