@@ -71,8 +71,8 @@ class RealSearchRepository(
             }
             val genres: List<Genre> = if (filters[4] || isAll) {
                 genreRepository.genres().filter { genre ->
-                    genre.name.lowercase()
-                        .contains(searchString.lowercase())
+                    genre.name.toLowerCase()
+                        .contains(searchString.toLowerCase())
                 }
             } else {
                 emptyList()

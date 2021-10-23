@@ -236,7 +236,7 @@ object MusicUtil : KoinComponent {
             if (TextUtils.isEmpty(musicMediaTitle)) {
                 return ""
             }
-            musicMediaTitle = musicMediaTitle!!.trim { it <= ' ' }.lowercase()
+            musicMediaTitle = musicMediaTitle!!.trim { it <= ' ' }.toLowerCase()
             if (musicMediaTitle.startsWith("the ")) {
                 musicMediaTitle = musicMediaTitle.substring(4)
             } else if (musicMediaTitle.startsWith("a ")) {
@@ -244,7 +244,7 @@ object MusicUtil : KoinComponent {
             }
             if (musicMediaTitle.isEmpty()) {
                 ""
-            } else musicMediaTitle.substring(0, 1).uppercase()
+            } else musicMediaTitle.substring(0, 1).toLowerCase()
         } catch (e: Exception) {
             ""
         }
@@ -312,7 +312,7 @@ object MusicUtil : KoinComponent {
         if (artistName == Artist.UNKNOWN_ARTIST_DISPLAY_NAME) {
             return true
         }
-        val tempName = artistName!!.trim { it <= ' ' }.lowercase()
+        val tempName = artistName!!.trim { it <= ' ' }.toLowerCase()
         return tempName == "unknown" || tempName == "<unknown>"
     }
 

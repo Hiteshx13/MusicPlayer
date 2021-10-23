@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="status_bar_padding">0dp</dimen>
     <dimen name="toolbar_elevation">4dp</dimen>
@@ -53,4 +53,13 @@
     <dimen name="indicator_radius">10dp</dimen>
     <dimen name="lyrics_dialog_radius">20dp</dimen>
     <dimen name="cast_mini_player_height">64dp</dimen>
+    <dimen name="exo_error_message_height" tools:keep="@dimen/exo_error_message_height">40dp</dimen>
+    <dimen name="exo_error_message_margin_bottom" tools:keep="@dimen/exo_error_message_margin_bottom">84dp</dimen>
+    <dimen name="exo_error_message_text_size" tools:keep="@dimen/exo_error_message_text_size">20sp</dimen>
+    <dimen name="exo_icon_size" tools:keep="@dimen/exo_icon_size">90dp</dimen>
+    <dimen name="controls_padding">170sp</dimen>
+
+    <dimen name="exo_styled_progress_enabled_thumb_size" tools:keep="@dimen/exo_styled_progress_enabled_thumb_size">12dp</dimen>
+    <dimen name="exo_styled_progress_dragged_thumb_size" tools:keep="@dimen/exo_styled_progress_dragged_thumb_size">18dp</dimen>
+    <dimen name="exo_styled_progress_margin_bottom" tools:keep="@dimen/exo_styled_progress_margin_bottom">51dp</dimen>
 </resources>

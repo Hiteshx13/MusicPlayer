@@ -15,7 +15,7 @@ class SplashActivity : AbsBaseActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler().postDelayed(Runnable {
-            launchActivity(MainActivity.getIntent(this))
+            launchActivity(PlayerSelectActivity.getIntent(this))
 
         }, SPLASH_TIME_OUT.toLong())
 

@@ -157,9 +157,9 @@ class RealArtistRepository(
                 }
             }.apply {
                 if (PreferenceUtil.artistSortOrder == SortOrder.ArtistSortOrder.ARTIST_A_Z) {
-                    sortedBy { it.name.lowercase() }
+                    sortedBy { it.name.toLowerCase() }
                 } else {
-                    sortedByDescending { it.name.lowercase() }
+                    sortedByDescending { it.name.toLowerCase() }
                 }
             }
     }

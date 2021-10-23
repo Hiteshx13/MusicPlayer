@@ -44,9 +44,9 @@ object SearchQueryHelper : KoinComponent {
                 songRepository.makeSongCursor(
                     ARTIST_SELECTION + AND + ALBUM_SELECTION + AND + TITLE_SELECTION,
                     arrayOf(
-                        artistName.lowercase(),
-                        albumName.lowercase(),
-                        titleName.lowercase()
+                        artistName.toLowerCase(),
+                        albumName.toLowerCase(),
+                        titleName.toLowerCase()
                     )
                 )
             )
@@ -59,8 +59,8 @@ object SearchQueryHelper : KoinComponent {
                 songRepository.makeSongCursor(
                     ARTIST_SELECTION + AND + TITLE_SELECTION,
                     arrayOf(
-                        artistName.lowercase(),
-                        titleName.lowercase()
+                        artistName.toLowerCase(),
+                        titleName.toLowerCase()
                     )
                 )
             )
@@ -73,8 +73,8 @@ object SearchQueryHelper : KoinComponent {
                 songRepository.makeSongCursor(
                     ALBUM_SELECTION + AND + TITLE_SELECTION,
                     arrayOf(
-                        albumName.lowercase(),
-                        titleName.lowercase()
+                        albumName.toLowerCase(),
+                        titleName.toLowerCase()
                     )
                 )
             )
@@ -86,7 +86,7 @@ object SearchQueryHelper : KoinComponent {
             songs = songRepository.songs(
                 songRepository.makeSongCursor(
                     ARTIST_SELECTION,
-                    arrayOf(artistName.lowercase())
+                    arrayOf(artistName.toLowerCase())
                 )
             )
         }
@@ -97,7 +97,7 @@ object SearchQueryHelper : KoinComponent {
             songs = songRepository.songs(
                 songRepository.makeSongCursor(
                     ALBUM_SELECTION,
-                    arrayOf(albumName.lowercase())
+                    arrayOf(albumName.toLowerCase())
                 )
             )
         }
@@ -108,7 +108,7 @@ object SearchQueryHelper : KoinComponent {
             songs = songRepository.songs(
                 songRepository.makeSongCursor(
                     TITLE_SELECTION,
-                    arrayOf(titleName.lowercase())
+                    arrayOf(titleName.toLowerCase())
                 )
             )
         }
@@ -118,7 +118,7 @@ object SearchQueryHelper : KoinComponent {
         songs = songRepository.songs(
             songRepository.makeSongCursor(
                 ARTIST_SELECTION,
-                arrayOf(query.lowercase())
+                arrayOf(query.toLowerCase())
             )
         )
 
@@ -128,7 +128,7 @@ object SearchQueryHelper : KoinComponent {
         songs = songRepository.songs(
             songRepository.makeSongCursor(
                 ALBUM_SELECTION,
-                arrayOf(query.lowercase())
+                arrayOf(query.toLowerCase())
             )
         )
         if (songs.isNotEmpty()) {
@@ -137,7 +137,7 @@ object SearchQueryHelper : KoinComponent {
         songs = songRepository.songs(
             songRepository.makeSongCursor(
                 TITLE_SELECTION,
-                arrayOf(query.lowercase())
+                arrayOf(query.toLowerCase())
             )
         )
         return if (songs.isNotEmpty()) {

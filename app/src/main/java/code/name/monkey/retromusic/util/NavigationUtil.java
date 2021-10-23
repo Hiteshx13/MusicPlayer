@@ -16,7 +16,6 @@ package code.name.monkey.retromusic.util;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.media.audiofx.AudioEffect;
@@ -113,10 +112,10 @@ public class NavigationUtil {
 
       DialogEqualizerFragment fragment = DialogEqualizerFragment.newBuilder()
               .setAudioSessionId(sessionId)
-              .themeColor(ContextCompat.getColor(activity, R.color.green))
+              .themeColor(ContextCompat.getColor(activity, R.color.color_blue))
               .textColor(ContextCompat.getColor(activity, R.color.black_color))
               .accentAlpha(ContextCompat.getColor(activity, R.color.default_blue_light))
-              .darkColor(ContextCompat.getColor(activity, R.color.green))
+              .darkColor(ContextCompat.getColor(activity, R.color.color_blue))
               .setAccentColor(ContextCompat.getColor(activity, R.color.md_white_1000))
               .build();
       fragment.show(activity.getFragmentManager(), "eq");
